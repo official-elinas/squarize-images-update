@@ -1,23 +1,30 @@
-# squarize-images
+# squarize-images-updated
 
-#
+1. Place the inside of the src folder in stable-diffusion folder in the webui-fork or whatever else you're using. 
 
-activate SD environment
+2. Create a new conda environment using the following command `conda env create --file=environment.yaml`
 
-```pip install natsort==8.1.0```  on top of your environment
+3. Run `pip install foliantcontrib.imagemagick natsort==8.1.0` on top of your activated conda environment named `ldzzz`, make sure your terminal says `(ldzzz)`
 
-place src folder in stable-diffusion folder
-
-Download the pre-trained weights
+4. Download the pre-trained weights (curl works on Windows Git Bash, or just download it manually)
 
 ```
 wget -O src/latent-diffusion/models/ldm/inpainting_big/last.ckpt https://heibox.uni-heidelberg.de/f/4d9ac7ea40c64582b7c9/?dl=1
 ```
-to run the script
+
+5. Running the script - my config, replace as needed
 
 ```
-python src\\latent-diffusion\\squarizeimages.py --input "C:\Users\Gebruiker\Documents\Visions of Chaos\Movies\00000000/" --steps "50" --projectname "square1" --edgeremoval --edgedetection "40%" --extra_crop --outdir "whatever/dir/is/possible"
+"C:\Users\<user>\miniconda3\envs\ldzzz\python.exe" \
+"<location_to_squarizeimages>\repositories\stable-diffusion\latent-diffusion\squarizeimages.py" \
+--input "<input_location>" \
+--steps 50 --projectname my_project \
+--outdir "<output_location>" \
+--latent_diffusion "<latent_diffusion_directory>"
 ```
+
+**Note: Use fully qualified paths. There is also a bug with images not being properly resized that are already 1:1 which will be addressed.**
+
 ```--input "path/to/input/images/folder/"``` the input folder
 
 ```--steps "50"``` the amount of steps the inpainting does
@@ -30,7 +37,8 @@ python src\\latent-diffusion\\squarizeimages.py --input "C:\Users\Gebruiker\Docu
 
 ```--outdir "path/to/output/images/folder"``` the output folder
 
-```--voc "1"``` if you have voc installed it will use the folders in voc automatically and you won't need to pass the latent diffusion location
+**Not using VOC at the time**
+```--voc "1"``` if you have voc installed it will use the folders in voc automatically and you won't need to pass the latent diffusion location 
 
 ```--latent_diffusion_path "path/to/Stable Diffusion/src/latent-diffusion"``` **only pass this if you're not using the voc version**
 
