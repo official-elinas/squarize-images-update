@@ -1,0 +1,6 @@
+pillow
+foliantcontrib.imagemagick
+natsort==8.2.0  # 8.1.0
+torch
+numpy
+cv2-tools
