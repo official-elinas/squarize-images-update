@@ -1,11 +1,22 @@
 # this script was modified by https://github.com/nicolai256 to make square training images squared without cropping
 
-import argparse
-import cv2
 import os
+import glob
+import argparse
 import shutil
-
 import subprocess
+
+from omegaconf import OmegaConf
+from PIL import Image
+from tqdm import tqdm
+import numpy as np
+import torch
+import cv2
+from main import instantiate_from_config
+from ldm.models.diffusion.ddim import DDIMSampler
+from natsort import natsorted
+
+# from src.latentdiffusion.ldm.util import instantiate_from_config
 
 parser = argparse.ArgumentParser()
 # inpaint
@@ -42,17 +53,6 @@ else:
     latent_diffusion_path = opt.latent_diffusion_path
 
 ##first pass of inpainting
-import os, glob
-from omegaconf import OmegaConf
-from PIL import Image
-from tqdm import tqdm
-import numpy as np
-import torch
-# from src.latentdiffusion.ldm.util import instantiate_from_config
-from main import instantiate_from_config
-from ldm.models.diffusion.ddim import DDIMSampler
-from natsort import natsorted
-
 path = opt.input
 dirs = os.listdir(path)
 path = opt.input
