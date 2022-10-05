@@ -4,7 +4,7 @@
 
 2. Create a new conda environment using the following command `conda env create --file=environment.yaml`
 
-3. Run `pip install foliantcontrib.imagemagick natsort==8.1.0` on top of your activated conda environment named `ldzzz`, make sure your terminal says `(ldzzz)`
+3. Run `pip install foliantcontrib.imagemagick natsort==8.2.0` on top of your activated conda environment named `ldzzz`, make sure your terminal says `(ldzzz)`
 
 4. Download the pre-trained weights (curl works on Windows Git Bash, or just download it manually)
 
