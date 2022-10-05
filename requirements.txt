@@ -1,6 +1,21 @@
-pillow
+pillow~=9.2.0
 foliantcontrib.imagemagick
-natsort==8.2.0  # 8.1.0
+natsort==8.2.0
 torch
-numpy
+numpy~=1.23.3
 cv2-tools
+opencv-python
+torchvision~=0.12.0
+pyyaml~=5.4.1
+opencv-python~=4.1.2.30
+albumentations~=0.4.3
+omegaconf~=2.1.1
+tqdm~=4.64.1
+einops~=0.3.0
+scipy~=1.9.1
+scikit-image~=0.19.3
+typing_extensions~=4.3.0
+transformers~=4.3.1
+requests~=2.28.1
+packaging~=21.3
+setuptools~=63.4.1
