@@ -1,11 +1,11 @@
-import PIL
-from PIL import Image
 import os
-
 import argparse
 
+import PIL
+from PIL import Image
+
 parser = argparse.ArgumentParser()
-parser.add_argument("--voc", type=int, default=False, help="activate edgedetection", )
+parser.add_argument("--voc", type=int, default=False, help="activate edge detection")
 opt = parser.parse_args()
 
 if opt.voc:
@@ -18,8 +18,6 @@ dirs = os.listdir(path)
 
 print(f'PATH: {path}')
 
-from PIL import Image
-
 
 def resize2():
     for item in dirs:
@@ -30,27 +28,20 @@ def resize2():
             h = img.height
             print("The height of the image is: ", img.height)
             print("The width of the image is: ", img.width)
-            if img.height == img.width or (abs(img.height - img.width) <= 1):
-                new_height = 512
-                img = Image.open(path + item)
-                new_width = int(new_height * w / h)
-                img = img.resize((new_width, new_height), Image.ANTIALIAS)
-                img.save(path + item)
-                # return size
-            elif img.width > img.height:
+            if img.width > img.height:
                 new_width = 512
                 img = Image.open(path + item)
                 new_height = int(new_width * h / w)
                 img = img.resize((new_width, new_height), Image.ANTIALIAS)
                 img.save(path + item)
-            elif img.height > img.width:
+            if img.height > img.width:
                 new_height = 512
                 img = Image.open(path + item)
                 new_width = int(new_height * w / h)
                 img = img.resize((new_width, new_height), Image.ANTIALIAS)
                 img.save(path + item)
                 # return size
-            print("next")
+                print("next")
 
 
 resize2()
