@@ -228,7 +228,8 @@ def square():
 			shutil.move(os.path.join(image),output_folder)
 		elif w+1==h:
 			shutil.move(os.path.join(image),output_folder)
-square()
+# commented out as we want to fix images that are still 1:1 or close
+# square()
 
 def padding():
     tmp_imgs_darken = latent_diffusion_path + '/scripts/squarize/tmp_imgs_darken.py'
@@ -321,7 +322,7 @@ def run():
 						Image.fromarray(inpainted.astype(np.uint8)).save(outpath)
 						base_count += 1
 
-			
+
 run()
 
 def rmdirs2():
