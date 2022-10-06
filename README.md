@@ -23,7 +23,7 @@ wget -O src/latent-diffusion/models/ldm/inpainting_big/last.ckpt https://heibox.
 --latent_diffusion "<latent_diffusion_directory>"
 ```
 
-**Note: Use fully qualified paths. There is also a bug with images not being properly resized that are already 1:1 which will be addressed.**
+**Note: Use fully qualified paths.**
 
 ```--input "path/to/input/images/folder/"``` the input folder
 
